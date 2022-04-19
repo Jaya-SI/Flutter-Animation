@@ -61,7 +61,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.popAndPushNamed(context, '/sign-in');
+                  },
                   child: Text(
                     'SKIP',
                     style: GoogleFonts.nunito(
@@ -106,6 +108,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 ),
                 TextButton(
                   onPressed: () {
+                    if (nextIndex == 2) {
+                      Navigator.pushNamed(context, '/sign-in');
+                    } else {
+                      controller.nextPage();
+                    }
                     controller.nextPage();
                   },
                   child: Text(
