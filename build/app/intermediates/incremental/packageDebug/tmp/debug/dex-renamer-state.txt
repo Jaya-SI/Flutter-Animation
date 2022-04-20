@@ -1,0 +1,4 @@
+#Wed Apr 20 15:04:32 SGT 2022
+base.0=D\:\\1.Kelas BWA\\space\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
