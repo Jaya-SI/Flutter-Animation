@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:space/theme.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:space/widget/home_catogry_item.dart';
+import 'package:space/widget/home_popular_item.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -195,7 +196,81 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-              )
+              ),
+              // Note : Popular SECTION
+              Container(
+                margin: EdgeInsets.only(top: 24),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(
+                      40,
+                    ),
+                  ),
+                  color: kWhiteColor,
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                        top: 24,
+                        left: 24,
+                        right: 24,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Popular',
+                            style: GoogleFonts.nunito(
+                              fontSize: 24,
+                              fontWeight: semibold,
+                              color: kBLackColor,
+                            ),
+                          ),
+                          Text(
+                            'Show All',
+                            style: GoogleFonts.nunito(),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    SizedBox(
+                      height: 310,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            HomePopularItem(
+                              title: 'Poan Chair',
+                              imageUrl: 'assets/image_product_popular1.png',
+                              price: 34,
+                              favorite: true,
+                            ),
+                            HomePopularItem(
+                              title: 'Poan Chair',
+                              imageUrl: 'assets/image_product_popular2.png',
+                              price: 20,
+                              favorite: false,
+                            ),
+                            HomePopularItem(
+                              title: 'Poan Chair',
+                              imageUrl: 'assets/image_product_popular3.png',
+                              price: 28,
+                              favorite: false,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                  ],
+                ),
+              ),
             ],
           )
         ],
