@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:space/pages/home_page.dart';
 import 'package:space/pages/onboarding_page.dart';
-import 'package:space/pages/search_page.dart';
 import 'package:space/pages/sign_in_page.dart';
 import 'package:space/pages/splash_page.dart';
-import 'package:space/widget/search_reasult_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,9 +17,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashPage(),
         '/onboarding': (context) => OnboardingPage(),
         '/sign-in': (context) => SignInPage(),
-        '/home': (context) => HomePage(),
-        '/search': (context) => SearchPage(),
-        '/search-result': (context) => SearchResultPage(),
+        '/home':(context) => HomePage(),
       },
     );
   }
