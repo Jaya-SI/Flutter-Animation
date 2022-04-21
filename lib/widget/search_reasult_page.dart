@@ -2,9 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:space/theme.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:space/widget/product_grid_item.dart';
+import 'package:space/widget/product_list_item.dart';
 import 'package:space/widget/skeleton_item.dart';
 
-class SearchResultPage extends StatelessWidget {
+class SearchResultPage extends StatefulWidget {
+  @override
+  State<SearchResultPage> createState() => _SearchResultPageState();
+}
+
+class _SearchResultPageState extends State<SearchResultPage> {
+  bool cekGrid = true;
+  bool cekLoading = true;
+
+  @override
+  void initState() {
+    Future.delayed(Duration(seconds: 2), () {
+      setState(() {
+        cekLoading = false;
+      });
+    });
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -18,9 +39,14 @@ class SearchResultPage extends StatelessWidget {
             elevation: 0,
             title: Row(
               children: [
-                Icon(
-                  Icons.chevron_left,
-                  color: kBLackColor,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.chevron_left,
+                    color: kBLackColor,
+                  ),
                 ),
                 SizedBox(
                   width: 18,
@@ -119,16 +145,27 @@ class SearchResultPage extends StatelessWidget {
                 fontWeight: semibold,
               ),
             ),
-            Image.asset(
-              'assets/icon_list.png',
-              width: 24,
+            GestureDetector(
+              onTap: (() {
+                setState(() {
+                  cekGrid = !cekGrid;
+                });
+              }),
+              child: Image.asset(
+                cekGrid ? 'assets/icon_list.png' : 'assets/icon_grid.png',
+                width: 24,
+              ),
             ),
           ],
         ),
         SizedBox(
           height: 20,
         ),
-        forLoading(),
+        cekLoading
+            ? forLoading()
+            : cekGrid
+                ? forGrid()
+                : forList(),
       ],
     );
   }
@@ -150,6 +187,107 @@ class SearchResultPage extends StatelessWidget {
   }
 
   Widget forGrid() {
-    return Container();
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      spacing: 18,
+      runSpacing: 18,
+      children: [
+        ProductGridItem(
+          imageUrl: 'assets/image_product_grid1.png',
+          title: 'Poan Chair',
+          price: 34,
+          favorite: false,
+        ),
+        ProductGridItem(
+          imageUrl: 'assets/image_product_grid2.png',
+          title: 'Poan Chair',
+          price: 34,
+          favorite: true,
+        ),
+        ProductGridItem(
+          imageUrl: 'assets/image_product_grid3.png',
+          title: 'Poan Chair',
+          price: 34,
+          favorite: false,
+        ),
+        ProductGridItem(
+          imageUrl: 'assets/image_product_grid4.png',
+          title: 'Poan Chair',
+          price: 34,
+          favorite: false,
+        ),
+        ProductGridItem(
+          imageUrl: 'assets/image_product_grid1.png',
+          title: 'Poan Chair',
+          price: 34,
+          favorite: false,
+        ),
+        ProductGridItem(
+          imageUrl: 'assets/image_product_grid2.png',
+          title: 'Poan Chair',
+          price: 34,
+          favorite: true,
+        ),
+        ProductGridItem(
+          imageUrl: 'assets/image_product_grid3.png',
+          title: 'Poan Chair',
+          price: 34,
+          favorite: false,
+        ),
+        ProductGridItem(
+          imageUrl: 'assets/image_product_grid4.png',
+          title: 'Poan Chair',
+          price: 34,
+          favorite: false,
+        ),
+      ],
+    );
+  }
+
+  Widget forList() {
+    return Column(
+      children: [
+        ProductListItem(
+          imageUrl: 'assets/image_product_list1.png',
+          title: 'Poan Chair',
+          price: 34,
+        ),
+        ProductListItem(
+          imageUrl: 'assets/image_product_list2.png',
+          title: 'Poan Chair',
+          price: 20,
+        ),
+        ProductListItem(
+          imageUrl: 'assets/image_product_list3.png',
+          title: 'Poan Chair',
+          price: 28,
+        ),
+        ProductListItem(
+          imageUrl: 'assets/image_product_list4.png',
+          title: 'Poan Table',
+          price: 50,
+        ),
+        ProductListItem(
+          imageUrl: 'assets/image_product_list1.png',
+          title: 'Poan Chair',
+          price: 34,
+        ),
+        ProductListItem(
+          imageUrl: 'assets/image_product_list2.png',
+          title: 'Poan Chair',
+          price: 20,
+        ),
+        ProductListItem(
+          imageUrl: 'assets/image_product_list3.png',
+          title: 'Poan Chair',
+          price: 28,
+        ),
+        ProductListItem(
+          imageUrl: 'assets/image_product_list4.png',
+          title: 'Poan Table',
+          price: 50,
+        ),
+      ],
+    );
   }
 }
