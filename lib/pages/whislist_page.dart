@@ -85,6 +85,8 @@ class _WhisListPageState extends State<WhisListPage> {
               Navigator.pushNamed(context, '/home');
             } else if (value == 1) {
               Navigator.pushNamed(context, '/whislist-page');
+            } else if (value == 2) {
+              Navigator.pushNamed(context, '/profile-page');
             }
           },
           items: [

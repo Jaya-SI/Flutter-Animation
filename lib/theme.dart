@@ -9,6 +9,8 @@ Color kWhiteColor = Color(0xffFFFFFF);
 Color kRedColor = Color(0xffFF314A);
 Color kYellowColor = Color(0xffFFBA00);
 Color kBlueColor = Color(0xff2972FF);
+Color kDarkColor = Color(0xff252836);
+Color kDarktwoColor = Color(0xff252836);
 
 FontWeight light = FontWeight.w300;
 FontWeight regular = FontWeight.w400;
