@@ -22,10 +22,20 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: kWhiteColor,
           showSelectedLabels: false,
           showUnselectedLabels: false,
+          onTap: (value) {
+            if (value == 0) {
+              Navigator.pushNamed(context, '/home');
+            } else if (value == 1) {
+              Navigator.pushNamed(context, '/whislist-page');
+            } else if (value == 2) {
+              Navigator.pushNamed(context, '/profile-page');
+            }
+          },
           items: [
             BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/icon_home.png',
+                color: kBlueColor,
                 width: 24,
               ),
               label: 'Home',
@@ -137,10 +147,15 @@ class _HomePageState extends State<HomePage> {
                 margin: EdgeInsets.only(top: 24),
                 child: CarouselSlider(
                   items: [
-                    HomeCategoryItem(
-                      title: 'Minimalis Chair',
-                      subtitle: 'Chair',
-                      imageUrl: 'assets/image_product_category1.png',
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/category-page');
+                      },
+                      child: HomeCategoryItem(
+                        title: 'Minimalis Chair',
+                        subtitle: 'Chair',
+                        imageUrl: 'assets/image_product_category1.png',
+                      ),
                     ),
                     HomeCategoryItem(
                       title: 'Minimalis Table',
