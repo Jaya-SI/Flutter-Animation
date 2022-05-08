@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:space/pages/category_page.dart';
+import 'package:space/pages/detail_page.dart';
 import 'package:space/pages/home_page.dart';
 import 'package:space/pages/onboarding_page.dart';
 import 'package:space/pages/profile_page.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/category-page': (context) => CategoryPage(),
         '/whislist-page': (context) => WhisListPage(),
         '/profile-page': (context) => ProfilePage(),
+        '/detail': (context) => DetailPage(),
       },
     );
   }

@@ -15,7 +15,7 @@
     },
     {
       "name": "carousel_slider",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.0.0",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -45,9 +45,9 @@
     },
     {
       "name": "crypto",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.1",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.2",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.14"
     },
     {
       "name": "cupertino_icons",
@@ -105,7 +105,7 @@
     },
     {
       "name": "google_fonts",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/google_fonts-2.3.1",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/google_fonts-2.3.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -165,7 +165,7 @@
     },
     {
       "name": "path_provider_android",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.12",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.13",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -279,7 +279,7 @@
     },
     {
       "name": "win32",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/win32-2.5.1",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/win32-2.5.2",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     },
@@ -296,7 +296,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-21T06:47:28.513289Z",
+  "generated": "2022-05-08T12:48:50.184256Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }
